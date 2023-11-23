@@ -1,0 +1,1 @@
+export { Georgian } from "./Georgian";
