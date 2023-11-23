@@ -1,0 +1,21 @@
+.info-spacing {
+  display: flex;
+  margin-left: 150px;
+  margin-top: 20px;
+
+  .first-name {
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    height: 38px;
+    border: 1px solid black;
+  }
+
+  .last-name {
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    height: 38px;
+    border: 1px solid black;
+  }
+}

@@ -10,6 +10,8 @@ import "./Objects/Objects.scss";
 
 import "./Spacing.scss";
 
+import { StudentsList } from "./StudentsList";
+
 function App() {
   return (
     <>
@@ -24,6 +26,9 @@ function App() {
           <SecondWeek></SecondWeek>
           <ThirdWeek></ThirdWeek>
         </div>
+      </section>
+      <section>
+        <StudentsList></StudentsList>
       </section>
     </>
   );
