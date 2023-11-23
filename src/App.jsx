@@ -1,13 +1,16 @@
 import { English } from "./Objects/English";
 import { Georgian } from "./Objects/Georgian";
 import { Math } from "./Objects/Math";
+import "./Objects/Objects.scss";
 
 function App() {
   return (
     <>
-      <Georgian></Georgian>
-      <Math></Math>
-      <English></English>
+      <div className="objects">
+        <Georgian></Georgian>
+        <Math></Math>
+        <English></English>
+      </div>
     </>
   );
 }
