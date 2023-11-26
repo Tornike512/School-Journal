@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { AppContext } from "../AppContext";
+
 import "./AddStudentModal.scss";
 
 export function AddStudentModal() {
   const [visible, setVisible] = useState(false);
-  const [input, setInput] = useState("");
-  const [secondInput, setSecondInput] = useState("");
+  const { input, setInput } = useContext(AppContext);
+  const { secondInput, setSecondInput } = useContext(AppContext);
 
   if (!visible) {
     return (

@@ -1,3 +1,5 @@
+import { AppProvider } from "./AppContext";
+
 import { English } from "./Objects/English";
 import { Georgian } from "./Objects/Georgian";
 import { Math } from "./Objects/Math";
@@ -18,7 +20,7 @@ import { Points } from "./Points";
 
 function App() {
   return (
-    <>
+    <AppProvider>
       <section className="spacing">
         <div className="objects">
           <Georgian></Georgian>
@@ -38,7 +40,7 @@ function App() {
         </div>
       </section>
       <AddStudentModal visible={false}></AddStudentModal>
-    </>
+    </AppProvider>
   );
 }
 
