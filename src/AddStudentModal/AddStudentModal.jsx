@@ -3,6 +3,8 @@ import "./AddStudentModal.scss";
 
 export function AddStudentModal() {
   const [visible, setVisible] = useState(false);
+  const [input, setInput] = useState("");
+  const [secondInput, setSecondInput] = useState("");
 
   if (!visible) {
     return (
@@ -26,11 +28,19 @@ export function AddStudentModal() {
             X
           </button>
           <h1>ახალი მოსწავლის დამატება</h1>
-          <form className="modal__input">
-            <input placeholder="მოსწავლის სახელი" />
-            <input placeholder="მოსწავლის გვარი" />
+          <form onSubmit={(e) => e.preventDefault()} className="modal__input">
+            <input
+              onChange={(event) => setInput(event.target.value)}
+              placeholder="მოსწავლის სახელი"
+            />
+            <input
+              onChange={(event) => setSecondInput(event.target.value)}
+              placeholder="მოსწავლის გვარი"
+            />
           </form>
-          <button className="add-button">დამატება</button>
+          <button onClick={() => setVisible(false)} className="add-button">
+            დამატება
+          </button>
         </div>
       </div>
     </>

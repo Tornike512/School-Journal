@@ -14,6 +14,8 @@ import { StudentsList } from "./StudentsList";
 
 import { AddStudentModal } from "./AddStudentModal";
 
+import { Points } from "./Points";
+
 function App() {
   return (
     <>
@@ -32,6 +34,7 @@ function App() {
       <section>
         <div className="list-spacing">
           <StudentsList></StudentsList>
+          <Points></Points>
         </div>
       </section>
       <AddStudentModal visible={false}></AddStudentModal>
