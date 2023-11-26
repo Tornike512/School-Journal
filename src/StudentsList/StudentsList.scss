@@ -10,16 +10,18 @@
       display: flex;
       justify-content: center;
       width: 150px;
-      height: 38px;
+      height: 30px;
       border: 1px solid black;
+      font-size: 20px;
     }
 
     .last-name {
       display: flex;
       justify-content: center;
       width: 150px;
-      height: 38px;
+      height: 30px;
       border: 1px solid black;
+      font-size: 20px;
     }
   }
   .week-spacing {
@@ -31,36 +33,75 @@
       display: flex;
       justify-content: center;
       width: 150px;
-      height: 38px;
+      height: 30px;
       border: 1px solid black;
+      font-size: 20px;
     }
     .tuesday {
       display: flex;
       justify-content: center;
       width: 150px;
-      height: 38px;
+      height: 30px;
       border: 1px solid black;
+      font-size: 20px;
     }
     .wednesday {
       display: flex;
       justify-content: center;
       width: 150px;
-      height: 38px;
+      height: 30px;
       border: 1px solid black;
+      font-size: 20px;
     }
     .thursday {
       display: flex;
       justify-content: center;
       width: 150px;
-      height: 38px;
+      height: 30px;
       border: 1px solid black;
+      font-size: 20px;
     }
     .friday {
       display: flex;
       justify-content: center;
       width: 150px;
-      height: 38px;
+      height: 30px;
       border: 1px solid black;
+      font-size: 20px;
     }
+  }
+}
+
+.student-form-spacing {
+  display: flex;
+
+  .new-student {
+    display: flex;
+    margin-left: 150px;
+    margin-top: -1px;
+
+    h1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 150px;
+      height: 30px;
+      border: 1px solid black;
+      font-size: 20px;
+    }
+  }
+  .form {
+    margin-left: 150px;
+    margin-top: -1px;
+  }
+  .form input {
+    width: 150px;
+    height: 30px;
+    border: 1px solid black;
+    font-size: 20px;
+  }
+
+  .form input::placeholder {
+    text-align: center;
   }
 }

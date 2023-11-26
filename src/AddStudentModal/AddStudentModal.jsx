@@ -19,6 +19,7 @@ export function AddStudentModal() {
       <button onClick={() => setVisible(true)} className="add-student">
         ახალი მოსწავლის დამატება
       </button>
+
       <div className="modal-background">
         <div className="modal">
           <button onClick={() => setVisible(false)} className="x-button">
