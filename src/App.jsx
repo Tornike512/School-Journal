@@ -11,7 +11,6 @@ import "./Objects/Objects.scss";
 import "./Spacing.scss";
 
 import { StudentsList } from "./StudentsList";
-import { AddStudent } from "./AddStudent";
 
 import { AddStudentModal } from "./AddStudentModal";
 
@@ -35,10 +34,7 @@ function App() {
           <StudentsList></StudentsList>
         </div>
       </section>
-      <section>
-        <AddStudent></AddStudent>
-      </section>
-      <AddStudentModal></AddStudentModal>
+      <AddStudentModal visible={false}></AddStudentModal>
     </>
   );
 }
