@@ -1,0 +1,69 @@
+.modal-background {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  .modal {
+    width: 274px;
+    height: 240px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    border: 1px solid black;
+
+    .x-button {
+      padding: 5px 8px;
+      margin-right: 8px;
+      position: absolute;
+      top: 2%;
+      left: 88%;
+      border: 1px solid rgb(22, 22, 201);
+      border-radius: 5px;
+      background-color: #ffffff;
+      color: #1616c9;
+      font-weight: bold;
+      cursor: pointer;
+
+      &:hover {
+        background-color: rgb(22, 22, 201);
+        color: #ffffff;
+      }
+    }
+
+    h1 {
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    input {
+      display: flex;
+      margin-bottom: 10px;
+      padding: 10px 20px;
+      border: 1px solid black;
+    }
+
+    .add-button {
+      padding: 10px 60px;
+      border: 2px solid rgb(22, 22, 201);
+      border-radius: 5px;
+      background-color: rgb(22, 22, 201);
+      color: #ffffff;
+      font-weight: bold;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #ffffff;
+        color: rgb(22, 22, 201);
+      }
+    }
+  }
+}

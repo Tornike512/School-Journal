@@ -1,21 +1,66 @@
-.info-spacing {
+.week-info-spacing {
   display: flex;
-  margin-left: 150px;
-  margin-top: 20px;
 
-  .first-name {
+  .info-spacing {
     display: flex;
-    justify-content: center;
-    width: 150px;
-    height: 38px;
-    border: 1px solid black;
+    margin-left: 150px;
+    margin-top: 20px;
+
+    .first-name {
+      display: flex;
+      justify-content: center;
+      width: 150px;
+      height: 38px;
+      border: 1px solid black;
+    }
+
+    .last-name {
+      display: flex;
+      justify-content: center;
+      width: 150px;
+      height: 38px;
+      border: 1px solid black;
+    }
   }
-
-  .last-name {
+  .week-spacing {
     display: flex;
-    justify-content: center;
-    width: 150px;
-    height: 38px;
-    border: 1px solid black;
+    margin-top: 20px;
+    margin-left: 172px;
+
+    .monday {
+      display: flex;
+      justify-content: center;
+      width: 150px;
+      height: 38px;
+      border: 1px solid black;
+    }
+    .tuesday {
+      display: flex;
+      justify-content: center;
+      width: 150px;
+      height: 38px;
+      border: 1px solid black;
+    }
+    .wednesday {
+      display: flex;
+      justify-content: center;
+      width: 150px;
+      height: 38px;
+      border: 1px solid black;
+    }
+    .thursday {
+      display: flex;
+      justify-content: center;
+      width: 150px;
+      height: 38px;
+      border: 1px solid black;
+    }
+    .friday {
+      display: flex;
+      justify-content: center;
+      width: 150px;
+      height: 38px;
+      border: 1px solid black;
+    }
   }
 }

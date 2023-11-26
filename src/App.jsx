@@ -11,6 +11,9 @@ import "./Objects/Objects.scss";
 import "./Spacing.scss";
 
 import { StudentsList } from "./StudentsList";
+import { AddStudent } from "./AddStudent";
+
+import { AddStudentModal } from "./AddStudentModal";
 
 function App() {
   return (
@@ -28,8 +31,14 @@ function App() {
         </div>
       </section>
       <section>
-        <StudentsList></StudentsList>
+        <div className="list-spacing">
+          <StudentsList></StudentsList>
+        </div>
       </section>
+      <section>
+        <AddStudent></AddStudent>
+      </section>
+      <AddStudentModal></AddStudentModal>
     </>
   );
 }
