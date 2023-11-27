@@ -5,8 +5,14 @@ import "./AddStudentModal.scss";
 
 export function AddStudentModal() {
   const [visible, setVisible] = useState(false);
-  const { input, setInput } = useContext(AppContext);
-  const { secondInput, setSecondInput } = useContext(AppContext);
+  const { addInputValue } = useContext(AppContext);
+  const { input, setInput } = useState("");
+  const [secondInput, setSecondInput] = useState("");
+
+  function addUser() {
+    addInputValue(input);
+    addInputValue(secondInput);
+  }
 
   if (!visible) {
     return (
@@ -40,7 +46,13 @@ export function AddStudentModal() {
               placeholder="მოსწავლის გვარი"
             />
           </form>
-          <button onClick={() => setVisible(false)} className="add-button">
+          <button
+            onClick={() => {
+              setVisible(false);
+              addUser();
+            }}
+            className="add-button"
+          >
             დამატება
           </button>
         </div>
