@@ -6,7 +6,7 @@ import "./AddStudentModal.scss";
 export function AddStudentModal() {
   const [visible, setVisible] = useState(false);
   const { addInputValue } = useContext(AppContext);
-  const { input, setInput } = useState("");
+  const [input, setInput] = useState("");
   const [secondInput, setSecondInput] = useState("");
 
   function addUser() {
