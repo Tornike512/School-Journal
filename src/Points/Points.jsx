@@ -6,6 +6,8 @@ export function Points() {
   const { input, setInput } = useContext(AppContext);
   const { secondInput, setSecondInput } = useContext(AppContext);
 
+  function addUser() {}
+
   return (
     <>
       <div className="student-form-spacing">
