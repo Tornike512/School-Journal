@@ -1,12 +1,12 @@
 import { useState, createContext } from "react";
 
-const subjects = [
+const subjects_default = [
   { id: "subject-id-1", name: "english" },
   { id: "subject-id-2", name: "georgian" },
   { id: "subject-id-3", name: "math" },
 ];
 
-const weeks = [
+const weeks_default = [
   { id: "week-id-1", name: "first week" },
   { id: "week-id-2", name: "second week" },
   { id: "week-id-3", name: "third week" },
@@ -31,15 +31,15 @@ export function AppProvider({ children }) {
   // const [secondInputValue, setSecondInputValue] = useState([]);
   // const [inputId, setInputId] = useState([]);
 
-  const [subjects, setSubject] = useState([subjects]);
-  const [weeks, setWeeks] = useState([weeks]);
+  const [subjects, setSubjects] = useState(subjects_default);
+  const [weeks, setWeeks] = useState(weeks_default);
   const [students, setStudents] = useState([]);
   const [grade, setGrade] = useState([]);
   return (
     <AppContext.Provider
       value={{
         subjects,
-        setStudents,
+        setSubjects,
         weeks,
         setWeeks,
         students,
