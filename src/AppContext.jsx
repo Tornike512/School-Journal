@@ -1,5 +1,4 @@
 import { useState, createContext } from "react";
-import { v4 as uuidv4 } from "uuid";
 
 const subjects = [
   { id: "subject-id-1", name: "english" },
@@ -13,10 +12,10 @@ const weeks = [
   { id: "week-id-3", name: "third week" },
 ];
 
-const students = [
-  { id: "student-id-1", firstName: "alexander", lastName: "volkanovski" },
-  { id: "student-id-2", firstName: "islam", lastName: "makhachev" },
-];
+// const students = [
+//   { id: "student-id-1", firstName: "alexander", lastName: "volkanovski" },
+//   { id: "student-id-2", firstName: "islam", lastName: "makhachev" },
+// ];
 
 export const AppContext = createContext({
   subjects: [],
@@ -32,31 +31,21 @@ export function AppProvider({ children }) {
   // const [secondInputValue, setSecondInputValue] = useState([]);
   // const [inputId, setInputId] = useState([]);
 
-  const [subject, setSubject] = useState([]);
-  const [weeks, setWeeks] = useState([]);
+  const [subjects, setSubject] = useState([subjects]);
+  const [weeks, setWeeks] = useState([weeks]);
   const [students, setStudents] = useState([]);
-
-  function addId(inputId = uuidv4()) {
-    setInputId((prev) => [...prev, inputId]);
-    console.log(inputId);
-  }
-
-  function addInputValue(inputValue) {
-    setInputValue((prev) => [...prev, inputValue]);
-  }
-  function addSecondInputValue(secondInputValue) {
-    setSecondInputValue((prev) => [...prev, secondInputValue]);
-  }
-
+  const [grade, setGrade] = useState([]);
   return (
     <AppContext.Provider
       value={{
-        inputValue,
-        addInputValue,
-        secondInputValue,
-        addSecondInputValue,
-        inputId,
-        addId,
+        subjects,
+        setStudents,
+        weeks,
+        setWeeks,
+        students,
+        setStudents,
+        grade,
+        setGrade,
       }}
     >
       {children}
