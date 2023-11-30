@@ -24,6 +24,8 @@ export const AppContext = createContext({
   setWeeks: undefined,
   students: [],
   setStudents: undefined,
+  grades: [],
+  setGrades: undefined,
 });
 
 export function AppProvider({ children }) {
@@ -34,7 +36,8 @@ export function AppProvider({ children }) {
   const [subjects, setSubjects] = useState(subjects_default);
   const [weeks, setWeeks] = useState(weeks_default);
   const [students, setStudents] = useState([]);
-  const [grade, setGrade] = useState([]);
+  const [grades, setGrades] = useState([]);
+  console.log(students);
   return (
     <AppContext.Provider
       value={{
@@ -44,8 +47,8 @@ export function AppProvider({ children }) {
         setWeeks,
         students,
         setStudents,
-        grade,
-        setGrade,
+        grades,
+        setGrades,
       }}
     >
       {children}

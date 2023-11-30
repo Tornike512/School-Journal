@@ -1,10 +1,25 @@
 import { useState, useContext } from "react";
 import { AppContext } from "../AppContext";
+import { v4 as uuidv4 } from "uuid";
 
 import "./AddStudentModal.scss";
+import uuid from "react-uuid";
 
 export function AddStudentModal() {
   const [visible, setVisible] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+
+  const { setStudents } = useContext(AppContext);
+
+  function addStudent() {
+    const newStudent = {
+      id: uuidv4(),
+      firstName: firstName,
+      lastName: lastName,
+    };
+    setStudents((prev) => [...prev, newStudent]);
+  }
 
   if (!visible) {
     return (
@@ -29,12 +44,23 @@ export function AddStudentModal() {
           </button>
           <h1>ახალი მოსწავლის დამატება</h1>
           <form onSubmit={(e) => e.preventDefault()} className="modal__input">
-            <input placeholder="მოსწავლის სახელი" />
-            <input placeholder="მოსწავლის გვარი" />
+            <input
+              placeholder="მოსწავლის სახელი"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+            />
+            <input
+              placeholder="მოსწავლის გვარი"
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+            />
           </form>
           <button
             onClick={() => {
-              setVisible(false);
+              {
+                setVisible(false);
+                addStudent();
+              }
             }}
             className="add-button"
           >
