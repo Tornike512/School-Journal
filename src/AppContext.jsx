@@ -12,11 +12,6 @@ const weeks_default = [
   { id: "week-id-3", name: "third week" },
 ];
 
-// const students = [
-//   { id: "student-id-1", firstName: "alexander", lastName: "volkanovski" },
-//   { id: "student-id-2", firstName: "islam", lastName: "makhachev" },
-// ];
-
 export const AppContext = createContext({
   subjects: [],
   setSubjects: undefined,
@@ -24,20 +19,16 @@ export const AppContext = createContext({
   setWeeks: undefined,
   students: [],
   setStudents: undefined,
-  grades: [],
-  setGrades: undefined,
+  points: [],
+  setPoints: undefined,
 });
 
 export function AppProvider({ children }) {
-  // const [inputValue, setInputValue] = useState([]);
-  // const [secondInputValue, setSecondInputValue] = useState([]);
-  // const [inputId, setInputId] = useState([]);
-
   const [subjects, setSubjects] = useState(subjects_default);
   const [weeks, setWeeks] = useState(weeks_default);
   const [students, setStudents] = useState([]);
-  const [grades, setGrades] = useState([]);
-  console.log(students);
+  const [points, setPoints] = useState([]);
+
   return (
     <AppContext.Provider
       value={{
@@ -47,8 +38,8 @@ export function AppProvider({ children }) {
         setWeeks,
         students,
         setStudents,
-        grades,
-        setGrades,
+        points,
+        setPoints,
       }}
     >
       {children}
