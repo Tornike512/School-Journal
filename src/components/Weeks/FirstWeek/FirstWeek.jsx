@@ -1,9 +1,20 @@
+import { useContext } from "react";
+import { AppContext } from "../../../AppContext";
 import "./FirstWeek.scss";
 
 export function FirstWeek() {
+  const { weeks } = useContext(AppContext);
+
+  const firstWeek = weeks[0];
+
   return (
     <>
-      <button className="first-week">პირველი კვირა</button>
+      <button className="first-week" key={firstWeek.id}>
+        {firstWeek.name}
+      </button>
+      {/* {weeks.map((week) => {
+        return <button className="first-week">{firstWeek.name}</button>;
+      })} */}
     </>
   );
 }

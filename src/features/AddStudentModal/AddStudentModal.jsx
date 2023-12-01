@@ -19,6 +19,8 @@ export function AddStudentModal() {
       lastName: lastName,
     };
     setStudents((prev) => [...prev, newStudent]);
+    setFirstName("");
+    setLastName("");
   }
 
   if (!visible) {
@@ -47,7 +49,9 @@ export function AddStudentModal() {
             <input
               placeholder="მოსწავლის სახელი"
               value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
+              onChange={(e) => {
+                setFirstName(e.target.value);
+              }}
             />
             <input
               placeholder="მოსწავლის გვარი"

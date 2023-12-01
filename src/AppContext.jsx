@@ -1,15 +1,15 @@
 import { useState, createContext } from "react";
 
 const subjects_default = [
-  { id: "subject-id-1", name: "english" },
-  { id: "subject-id-2", name: "georgian" },
-  { id: "subject-id-3", name: "math" },
+  { id: "subject-id-1", name: "ქართული" },
+  { id: "subject-id-2", name: "მათემატიკა" },
+  { id: "subject-id-3", name: "ინგლისური" },
 ];
 
 const weeks_default = [
-  { id: "week-id-1", name: "first week" },
-  { id: "week-id-2", name: "second week" },
-  { id: "week-id-3", name: "third week" },
+  { id: "week-id-1", name: "პირველი კვირა" },
+  { id: "week-id-2", name: "მეორე კვირა" },
+  { id: "week-id-3", name: "მესამე კვირა" },
 ];
 
 export const AppContext = createContext({
@@ -28,6 +28,8 @@ export function AppProvider({ children }) {
   const [weeks, setWeeks] = useState(weeks_default);
   const [students, setStudents] = useState([]);
   const [points, setPoints] = useState([]);
+
+  console.log(subjects);
 
   return (
     <AppContext.Provider
