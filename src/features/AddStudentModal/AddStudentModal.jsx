@@ -1,5 +1,5 @@
 import { useState, useContext } from "react";
-import { AppContext } from "../AppContext";
+import { AppContext } from "../../AppContext";
 import { v4 as uuidv4 } from "uuid";
 
 import "./AddStudentModal.scss";

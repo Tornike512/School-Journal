@@ -1,22 +1,22 @@
 import { AppProvider } from "./AppContext";
 
-import { English } from "./Objects/English";
-import { Georgian } from "./Objects/Georgian";
-import { Math } from "./Objects/Math";
-import "./Week/Week.scss";
+import { English } from "./components/Subjects/English";
+import { Georgian } from "./components/Subjects/Georgian";
+import { Math } from "./components/Subjects/Math";
+import "./components/Weeks/Week.scss";
 
-import { FirstWeek } from "./Week/FirstWeek";
-import { SecondWeek } from "./Week/SecondWeek";
-import { ThirdWeek } from "./Week/ThirdWeek";
-import "./Objects/Objects.scss";
+import { FirstWeek } from "./components/Weeks/FirstWeek";
+import { SecondWeek } from "./components/Weeks/SecondWeek";
+import { ThirdWeek } from "./components/Weeks/ThirdWeek";
+import "./components/Subjects/Objects.scss";
 
 import "./Spacing.scss";
 
-import { StudentsList } from "./StudentsList";
+import { StudentsList } from "./components/StudentsList";
 
-import { AddStudentModal } from "./AddStudentModal";
+import { AddStudentModal } from "./features/AddStudentModal";
 
-import { Points } from "./Points";
+import { Points } from "./components/Points";
 
 function App() {
   return (
