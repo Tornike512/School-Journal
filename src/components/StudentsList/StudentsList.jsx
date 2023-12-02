@@ -1,10 +1,9 @@
 import { useContext, useState } from "react";
 import { AppContext } from "../../AppContext";
 import "./StudentsList.scss";
-import { useSearchParams } from "react-router-dom";
 
 export function StudentsList() {
-  const { students } = useContext(AppContext);
+  const { students, input } = useContext(AppContext);
 
   const [edit, setEdit] = useState(false);
   const [value, setValue] = useState("-");
@@ -41,11 +40,11 @@ export function StudentsList() {
             <div className="point-spacing">
               {edit ? (
                 <input
+                  key={input.id}
                   value={value}
                   onChange={(e) => setValue(e.target.value)}
                   onBlur={buttonValue}
-                  type="number"
-                  max={100}
+                  type="text"
                   placeholder="-"
                 />
               ) : (
@@ -53,11 +52,11 @@ export function StudentsList() {
               )}
               {edit ? (
                 <input
+                  key={input.id}
                   value={value}
                   onChange={(e) => setValue(e.target.value)}
                   onBlur={buttonValue}
-                  type="number"
-                  max={100}
+                  type="text"
                   placeholder="-"
                 />
               ) : (
@@ -65,11 +64,11 @@ export function StudentsList() {
               )}
               {edit ? (
                 <input
+                  key={input.id}
                   value={value}
                   onChange={(e) => setValue(e.target.value)}
                   onBlur={buttonValue}
-                  type="number"
-                  max={100}
+                  type="text"
                   placeholder="-"
                 />
               ) : (
@@ -77,11 +76,11 @@ export function StudentsList() {
               )}
               {edit ? (
                 <input
+                  key={input.id}
                   value={value}
                   onChange={(e) => setValue(e.target.value)}
                   onBlur={buttonValue}
-                  type="number"
-                  max={100}
+                  type="text"
                   placeholder="-"
                 />
               ) : (
@@ -89,11 +88,11 @@ export function StudentsList() {
               )}
               {edit ? (
                 <input
+                  key={input.id}
                   value={value}
                   onChange={(e) => setValue(e.target.value)}
                   onBlur={buttonValue}
-                  type="number"
-                  max={100}
+                  type="text"
                   placeholder="-"
                 />
               ) : (

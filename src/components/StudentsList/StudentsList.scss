@@ -101,7 +101,6 @@
       height: 30px;
       border: 1px solid black;
       font-size: 20px;
-      box-sizing: border-box;
     }
 
     & input::placeholder {
@@ -115,8 +114,8 @@
       text-align: center;
       background-color: #ffffff;
       border: 1px solid black;
+      overflow: hidden;
       cursor: pointer;
-      box-sizing: border-box;
     }
   }
 }
