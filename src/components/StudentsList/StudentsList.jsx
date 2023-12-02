@@ -3,7 +3,7 @@ import { AppContext } from "../../AppContext";
 import "./StudentsList.scss";
 
 export function StudentsList() {
-  const { students } = useContext(AppContext);
+  const { students, getPoints, setGetPoints } = useContext(AppContext);
 
   const [edit, setEdit] = useState(false);
   const [inputValues, setInputValues] = useState(
@@ -16,6 +16,7 @@ export function StudentsList() {
 
   function buttonValue() {
     setEdit(false);
+    setGetPoints((prevPoints) => [...prevPoints, ...inputValues]);
   }
 
   function studentPoint(studentId, value) {

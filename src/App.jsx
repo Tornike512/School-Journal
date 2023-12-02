@@ -1,7 +1,5 @@
 import { AppProvider } from "./AppContext";
 
-import { Routes, Route } from "react-router-dom";
-
 import { English } from "./components/Subjects/English";
 import { Georgian } from "./components/Subjects/Georgian";
 import { Math } from "./components/Subjects/Math";
@@ -23,22 +21,22 @@ function App() {
     <AppProvider>
       <section className="spacing">
         <div className="objects">
-          <Georgian></Georgian>
-          <Math></Math>
-          <English></English>
+          <Georgian />
+          <Math />
+          <English />
         </div>
         <div className="week">
-          <FirstWeek></FirstWeek>
-          <SecondWeek></SecondWeek>
-          <ThirdWeek></ThirdWeek>
+          <FirstWeek />
+          <SecondWeek />
+          <ThirdWeek />
         </div>
       </section>
       <section>
         <div className="list-spacing">
-          <StudentsList></StudentsList>
+          <StudentsList />
         </div>
       </section>
-      <AddStudentModal></AddStudentModal>
+      <AddStudentModal />
     </AppProvider>
   );
 }

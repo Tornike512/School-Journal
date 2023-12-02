@@ -12,6 +12,18 @@ const weeks_default = [
   { id: "week-id-3", name: "მესამე კვირა" },
 ];
 
+const activeSubjectsPage = [
+  { id: "first-subject", number: 1 },
+  { id: "second-subject", number: 2 },
+  { id: "third-subject", number: 3 },
+];
+
+const activeWeeksPage = [
+  { id: "first-week", number: 1 },
+  { id: "second-week", number: 2 },
+  { id: "third-week", number: 3 },
+];
+
 const points_default = [
   {
     id: "grade-id-1",
@@ -25,42 +37,68 @@ const points_default = [
 export const AppContext = createContext({
   subjects: [],
   setSubjects: undefined,
+
   weeks: [],
   setWeeks: undefined,
+
   students: [],
   setStudents: undefined,
+
   points: [],
   setPoints: undefined,
+
+  activeSubjectsPage: 1,
+  setActiveSubjectsPage: undefined,
+
+  activeWeeksPage: 1,
+  setActiveWeeksPage: undefined,
 });
 
 export function AppProvider({ children }) {
   const [subjects, setSubjects] = useState(subjects_default);
   const [weeks, setWeeks] = useState(weeks_default);
-  const [students, setStudents] = useState([]);
   const [points, setPoints] = useState([points_default]);
+  const [students, setStudents] = useState([]);
+  const [getPoints, setGetPoints] = useState([]);
 
   const [currentWeek, setCurrentWeek] = useState();
   const [currentSubject, setCurrentSubject] = useState();
 
-  console.log(currentWeek);
-  console.log(currentSubject);
+  const [activeSubjectsPage, setActiveSubjectsPage] = useState(1);
+  const [activeWeeksPage, setActiveWeeksPage] = useState(1);
+
   console.log(students);
+  console.log(getPoints);
 
   return (
     <AppContext.Provider
       value={{
         subjects,
         setSubjects,
+
         weeks,
         setWeeks,
+
         students,
         setStudents,
+
         points,
         setPoints,
+
         currentWeek,
         setCurrentWeek,
+
         currentSubject,
         setCurrentSubject,
+
+        activeSubjectsPage,
+        setActiveSubjectsPage,
+
+        activeWeeksPage,
+        setActiveWeeksPage,
+
+        getPoints,
+        setGetPoints,
       }}
     >
       {children}

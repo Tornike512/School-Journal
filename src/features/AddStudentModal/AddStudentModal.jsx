@@ -1,9 +1,8 @@
+import { v4 as uuidv4 } from "uuid";
 import { useState, useContext } from "react";
 import { AppContext } from "../../AppContext";
-import { v4 as uuidv4 } from "uuid";
 
 import "./AddStudentModal.scss";
-import uuid from "react-uuid";
 
 export function AddStudentModal() {
   const [visible, setVisible] = useState(false);
@@ -18,6 +17,7 @@ export function AddStudentModal() {
       firstName: firstName,
       lastName: lastName,
     };
+
     setStudents((prev) => [...prev, newStudent]);
     setFirstName("");
     setLastName("");

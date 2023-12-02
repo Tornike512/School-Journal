@@ -3,7 +3,8 @@ import { AppContext } from "../../../AppContext";
 import "./georgian.scss";
 
 export function Georgian() {
-  const { subjects, setCurrentSubject } = useContext(AppContext);
+  const { subjects, setCurrentSubject, activeSubjectsPage } =
+    useContext(AppContext);
 
   const firstSubject = subjects[0];
 
@@ -12,6 +13,13 @@ export function Georgian() {
   useEffect(() => {
     toggleGeo.current.focus();
   }, []);
+
+  function geoClick() {
+    const newGeoClick = {
+      id: activeSubjectsPage.id,
+      number: activeSubjectsPage.number,
+    };
+  }
 
   return (
     <>
