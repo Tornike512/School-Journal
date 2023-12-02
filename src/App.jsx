@@ -1,5 +1,7 @@
 import { AppProvider } from "./AppContext";
 
+import { Routes, Route } from "react-router-dom";
+
 import { English } from "./components/Subjects/English";
 import { Georgian } from "./components/Subjects/Georgian";
 import { Math } from "./components/Subjects/Math";
@@ -39,7 +41,7 @@ function App() {
           <Points></Points>
         </div>
       </section>
-      <AddStudentModal visible={false}></AddStudentModal>
+      <AddStudentModal></AddStudentModal>
     </AppProvider>
   );
 }

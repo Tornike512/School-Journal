@@ -29,6 +29,9 @@ export function AppProvider({ children }) {
   const [students, setStudents] = useState([]);
   const [points, setPoints] = useState([]);
 
+  const [currentWeek, setCurrentWeek] = useState();
+  const [currentSubject, setCurrentSubject] = useState();
+
   console.log(subjects);
 
   return (
@@ -42,6 +45,10 @@ export function AppProvider({ children }) {
         setStudents,
         points,
         setPoints,
+        currentWeek,
+        setCurrentWeek,
+        currentSubject,
+        setCurrentSubject,
       }}
     >
       {children}
