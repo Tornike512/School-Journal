@@ -18,8 +18,6 @@ import { StudentsList } from "./components/StudentsList";
 
 import { AddStudentModal } from "./features/AddStudentModal";
 
-import { Points } from "./components/Points";
-
 function App() {
   return (
     <AppProvider>
@@ -38,7 +36,6 @@ function App() {
       <section>
         <div className="list-spacing">
           <StudentsList></StudentsList>
-          <Points></Points>
         </div>
       </section>
       <AddStudentModal></AddStudentModal>

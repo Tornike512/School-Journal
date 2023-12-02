@@ -57,7 +57,7 @@ export function StudentsList() {
                       }
                       onBlur={buttonValue}
                       type="text"
-                      placeholder="შემოიყვანეთ"
+                      placeholder="-"
                     />
                   ) : (
                     <button onClick={changeText}>
