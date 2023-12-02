@@ -12,6 +12,16 @@ const weeks_default = [
   { id: "week-id-3", name: "მესამე კვირა" },
 ];
 
+const points_default = [
+  {
+    id: "grade-id-1",
+    studentsId: "students-id-1",
+    subjectId: "subject-id-1,",
+    weekId: "week-id-1",
+    points: 10,
+  },
+];
+
 export const AppContext = createContext({
   subjects: [],
   setSubjects: undefined,
@@ -27,13 +37,14 @@ export function AppProvider({ children }) {
   const [subjects, setSubjects] = useState(subjects_default);
   const [weeks, setWeeks] = useState(weeks_default);
   const [students, setStudents] = useState([]);
-  const [points, setPoints] = useState([]);
+  const [points, setPoints] = useState([points_default]);
 
   const [currentWeek, setCurrentWeek] = useState();
   const [currentSubject, setCurrentSubject] = useState();
 
   console.log(currentWeek);
   console.log(currentSubject);
+  console.log(students);
 
   return (
     <AppContext.Provider

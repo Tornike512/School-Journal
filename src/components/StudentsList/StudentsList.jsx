@@ -6,7 +6,6 @@ export function StudentsList() {
   const { students } = useContext(AppContext);
 
   const [edit, setEdit] = useState(false);
-  const [value, setValue] = useState("");
   const [inputValues, setInputValues] = useState(
     Array(students.length).fill("")
   );
@@ -41,7 +40,7 @@ export function StudentsList() {
         </div>
       </div>
 
-      {students.map((student, studentId) => (
+      {students?.map((student, studentId) => (
         <div className="new-student-spacing" key={student.id}>
           <div className="student-spacing">
             <h1 className="new-student">{student.firstName}</h1>
@@ -57,7 +56,7 @@ export function StudentsList() {
                       }
                       onBlur={buttonValue}
                       type="text"
-                      placeholder="-"
+                      placeholder="შემოიყვანეთ"
                     />
                   ) : (
                     <button onClick={changeText}>
