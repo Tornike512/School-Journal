@@ -32,7 +32,8 @@ export function AppProvider({ children }) {
   const [currentWeek, setCurrentWeek] = useState();
   const [currentSubject, setCurrentSubject] = useState();
 
-  console.log(subjects);
+  console.log(currentWeek);
+  console.log(currentSubject);
 
   return (
     <AppContext.Provider

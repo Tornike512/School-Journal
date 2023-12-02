@@ -3,13 +3,17 @@ import { AppContext } from "../../../AppContext";
 import "./English.scss";
 
 export function English() {
-  const { subjects } = useContext(AppContext);
+  const { subjects, setCurrentSubject } = useContext(AppContext);
 
   const thirdSubject = subjects[2];
 
   return (
     <>
-      <button className="english" key={thirdSubject.id}>
+      <button
+        onClick={() => setCurrentSubject(thirdSubject.id)}
+        className="english"
+        key={thirdSubject.id}
+      >
         {thirdSubject.name}
       </button>
     </>
