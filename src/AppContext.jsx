@@ -12,14 +12,6 @@ const weeks_default = [
   { id: "week-id-3", name: "მესამე კვირა" },
 ];
 
-const input_default = [
-  { id: "first-input" },
-  { id: "second-input" },
-  { id: "third-input" },
-  { id: "forth-input" },
-  { id: "fifth-input" },
-];
-
 export const AppContext = createContext({
   subjects: [],
   setSubjects: undefined,
@@ -34,7 +26,6 @@ export const AppContext = createContext({
 export function AppProvider({ children }) {
   const [subjects, setSubjects] = useState(subjects_default);
   const [weeks, setWeeks] = useState(weeks_default);
-  const [input, setInput] = useState(input_default);
   const [students, setStudents] = useState([]);
   const [points, setPoints] = useState([]);
 
@@ -53,8 +44,6 @@ export function AppProvider({ children }) {
         setWeeks,
         students,
         setStudents,
-        input,
-        setInput,
         points,
         setPoints,
         currentWeek,
