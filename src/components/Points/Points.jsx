@@ -14,13 +14,6 @@ export function Points() {
               <h1 key={inputId}>{value}</h1>
               <h1 key={inputId}>{secondInputValue} </h1>
             </div>
-            <form className="form">
-              <input placeholder="-" />
-              <input placeholder="-" />
-              <input placeholder="-" />
-              <input placeholder="-" />
-              <input placeholder="-" />
-            </form>
           </div>
         );
       })}
