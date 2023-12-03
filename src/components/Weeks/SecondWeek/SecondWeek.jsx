@@ -3,16 +3,22 @@ import { AppContext } from "../../../AppContext";
 import "./SecondWeek.scss";
 
 export function SecondWeek() {
-  const { weeks, setCurrentWeek } = useContext(AppContext);
+  const { weeks, setCurrentWeek, setSelectedWeek, selectedWeek } =
+    useContext(AppContext);
 
   const secondWeek = weeks[1];
 
   return (
     <>
       <button
-        className="second-week"
+        onClick={() => {
+          setCurrentWeek(secondWeek.id);
+          setSelectedWeek("secondWeek");
+        }}
+        className={
+          selectedWeek === "secondWeek" ? "toggled-second-week" : "second-week"
+        }
         key={secondWeek.id}
-        onClick={() => setCurrentWeek(secondWeek.id)}
       >
         {secondWeek.name}
       </button>

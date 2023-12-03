@@ -37,6 +37,9 @@ export const AppContext = createContext({
 
   selectedSubject: "",
   setSelectedSubject: undefined,
+
+  selectedWeek: "",
+  setSelectedWeek: undefined,
 });
 
 export function AppProvider({ children }) {
@@ -46,6 +49,7 @@ export function AppProvider({ children }) {
   const [students, setStudents] = useState([]);
   const [getPoints, setGetPoints] = useState([]);
   const [selectedSubject, setSelectedSubject] = useState("");
+  const [selectedWeek, setSelectedWeek] = useState("");
 
   const [currentWeek, setCurrentWeek] = useState();
   const [currentSubject, setCurrentSubject] = useState();
@@ -79,6 +83,9 @@ export function AppProvider({ children }) {
 
         selectedSubject,
         setSelectedSubject,
+
+        selectedWeek,
+        setSelectedWeek,
       }}
     >
       {children}

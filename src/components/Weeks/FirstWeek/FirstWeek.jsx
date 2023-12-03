@@ -3,22 +3,25 @@ import { AppContext } from "../../../AppContext";
 import "./FirstWeek.scss";
 
 export function FirstWeek() {
-  const { weeks, setCurrentWeek } = useContext(AppContext);
+  const { weeks, setCurrentWeek, selectedWeek, setSelectedWeek } =
+    useContext(AppContext);
 
   const firstWeek = weeks[0];
 
   return (
     <>
       <button
-        className="first-week"
+        onClick={() => {
+          setCurrentWeek(firstWeek.id);
+          setSelectedWeek("firstWeek");
+        }}
+        className={
+          selectedWeek === "firstWeek" ? "toggled-first-week" : "first-week"
+        }
         key={firstWeek.id}
-        onClick={() => setCurrentWeek(firstWeek.id)}
       >
         {firstWeek.name}
       </button>
-      {/* {weeks.map((week) => {
-        return <button className="first-week">{firstWeek.name}</button>;
-      })} */}
     </>
   );
 }
