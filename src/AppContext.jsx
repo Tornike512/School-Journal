@@ -53,7 +53,15 @@ export function AppProvider({ children }) {
 
   const [currentWeek, setCurrentWeek] = useState();
   const [currentSubject, setCurrentSubject] = useState();
-  const [currentPoints, setCurrentPoints] = useState([]);
+  const [currentPoints, setCurrentPoints] = useState([
+    {
+      id: "points-Id-1",
+      StudentsId: students[0],
+      weekId: currentWeek || "week-id-1",
+      subjectId: currentSubject || "subject-id-1",
+      points: getPoints,
+    },
+  ]);
 
   console.log(students);
   console.log(getPoints);
@@ -88,6 +96,9 @@ export function AppProvider({ children }) {
 
         selectedWeek,
         setSelectedWeek,
+
+        currentPoints,
+        setCurrentPoints,
       }}
     >
       {children}

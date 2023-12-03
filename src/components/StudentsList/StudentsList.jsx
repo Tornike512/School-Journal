@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { AppContext } from "../../AppContext";
 import "./StudentsList.scss";
 
-export function StudentsList() {
+export function StudentsList({ children }) {
   const { students, setGetPoints, getPoints, currentWeek, currentSubject } =
     useContext(AppContext);
 
@@ -29,19 +29,14 @@ export function StudentsList() {
   const currentGrades = [
     {
       id: "points-Id-1",
-      StudentsId: students,
+      StudentsId: students[0],
       weekId: currentWeek || "week-id-1",
       subjectId: currentSubject || "subject-id-1",
       points: getPoints,
     },
   ];
 
-  const filteredGrades = currentGrades.filter(
-    (grade) =>
-      grade.subjectId === currentSubject || grade.weekId === currentWeek
-  );
   console.log(currentGrades);
-
   return (
     <>
       <div className="week-info-spacing">
@@ -63,31 +58,7 @@ export function StudentsList() {
           <div className="student-spacing">
             <h1 className="new-student">{student.firstName}</h1>
             <h1 className="new-student">{student.lastName}</h1>
-            <div className="point-spacing">
-              {filteredGrades
-                .map((grade) =>
-                  [0, 1, 2, 3, 4].map((id) => (
-                    <div key={id}>
-                      {edit ? (
-                        <input
-                          value={inputValues[studentId * 5 + id]}
-                          onChange={(e) =>
-                            studentPoint(studentId * 5 + id, e.target.value)
-                          }
-                          onBlur={buttonValue}
-                          type="text"
-                          placeholder="შემოიყვანეთ"
-                        />
-                      ) : (
-                        <button onClick={changeText}>
-                          {inputValues[studentId * 5 + id]}
-                        </button>
-                      )}
-                    </div>
-                  ))
-                )
-                .flat()}
-            </div>
+            <div className="point-spacing">{children}</div>
           </div>
         </div>
       ))}
