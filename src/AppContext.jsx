@@ -12,18 +12,6 @@ const weeks_default = [
   { id: "week-id-3", name: "მესამე კვირა" },
 ];
 
-const activeSubjectsPage = [
-  { id: "first-subject", number: 1 },
-  { id: "second-subject", number: 2 },
-  { id: "third-subject", number: 3 },
-];
-
-const activeWeeksPage = [
-  { id: "first-week", number: 1 },
-  { id: "second-week", number: 2 },
-  { id: "third-week", number: 3 },
-];
-
 const points_default = [
   {
     id: "grade-id-1",
@@ -47,11 +35,8 @@ export const AppContext = createContext({
   points: [],
   setPoints: undefined,
 
-  activeSubjectsPage: 1,
-  setActiveSubjectsPage: undefined,
-
-  activeWeeksPage: 1,
-  setActiveWeeksPage: undefined,
+  selectedSubject: "",
+  setSelectedSubject: undefined,
 });
 
 export function AppProvider({ children }) {
@@ -60,6 +45,7 @@ export function AppProvider({ children }) {
   const [points, setPoints] = useState([points_default]);
   const [students, setStudents] = useState([]);
   const [getPoints, setGetPoints] = useState([]);
+  const [selectedSubject, setSelectedSubject] = useState("");
 
   const [currentWeek, setCurrentWeek] = useState();
   const [currentSubject, setCurrentSubject] = useState();
@@ -90,6 +76,9 @@ export function AppProvider({ children }) {
 
         getPoints,
         setGetPoints,
+
+        selectedSubject,
+        setSelectedSubject,
       }}
     >
       {children}

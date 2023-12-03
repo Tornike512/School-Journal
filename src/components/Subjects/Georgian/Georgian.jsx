@@ -1,36 +1,25 @@
-import { useContext, useRef, useEffect } from "react";
+import { useContext } from "react";
 import { AppContext } from "../../../AppContext";
 import "./georgian.scss";
 
 export function Georgian() {
-  const { subjects, setCurrentSubject, activeSubjectsPage } =
+  const { subjects, setCurrentSubject, selectedSubject, setSelectedSubject } =
     useContext(AppContext);
 
   const firstSubject = subjects[0];
 
-  const toggleGeo = useRef(null);
-
-  useEffect(() => {
-    toggleGeo.current.focus();
-  }, []);
-
-  function geoClick() {
-    const newGeoClick = {
-      id: activeSubjectsPage.id,
-      number: activeSubjectsPage.number,
-    };
-  }
-
   return (
-    <>
-      <button
-        onClick={() => setCurrentSubject(firstSubject.id)}
-        className="georgian"
-        key={firstSubject.id}
-        ref={toggleGeo}
-      >
-        {firstSubject.name}
-      </button>
-    </>
+    <button
+      onClick={() => {
+        setCurrentSubject(firstSubject.id);
+        setSelectedSubject("georgian");
+      }}
+      className={
+        selectedSubject === "georgian" ? "toggled-georgian" : "georgian"
+      }
+      key={firstSubject.id}
+    >
+      {firstSubject.name}
+    </button>
   );
 }
