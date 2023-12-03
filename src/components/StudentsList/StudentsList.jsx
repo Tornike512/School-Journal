@@ -3,7 +3,7 @@ import { AppContext } from "../../AppContext";
 import "./StudentsList.scss";
 
 export function StudentsList() {
-  const { students, getPoints, setGetPoints } = useContext(AppContext);
+  const { students, setGetPoints } = useContext(AppContext);
 
   const [edit, setEdit] = useState(false);
   const [inputValues, setInputValues] = useState(

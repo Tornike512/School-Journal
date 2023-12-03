@@ -12,15 +12,15 @@ const weeks_default = [
   { id: "week-id-3", name: "მესამე კვირა" },
 ];
 
-const points_default = [
-  {
-    id: "grade-id-1",
-    studentsId: "students-id-1",
-    subjectId: "subject-id-1,",
-    weekId: "week-id-1",
-    points: 10,
-  },
-];
+// const points_default = [
+//   {
+//     id: "grade-id-1",
+//     studentsId: "students-id-1",
+//     subjectId: "subject-id-1,",
+//     weekId: "week-id-1",
+//     points: 10,
+//   },
+// ];
 
 export const AppContext = createContext({
   subjects: [],
@@ -45,7 +45,7 @@ export const AppContext = createContext({
 export function AppProvider({ children }) {
   const [subjects, setSubjects] = useState(subjects_default);
   const [weeks, setWeeks] = useState(weeks_default);
-  const [points, setPoints] = useState([points_default]);
+  const [points, setPoints] = useState([]);
   const [students, setStudents] = useState([]);
   const [getPoints, setGetPoints] = useState([]);
   const [selectedSubject, setSelectedSubject] = useState("");
@@ -54,8 +54,25 @@ export function AppProvider({ children }) {
   const [currentWeek, setCurrentWeek] = useState();
   const [currentSubject, setCurrentSubject] = useState();
 
+  const currentPoints = [
+    {
+      id: "points-Id-1",
+      StudentsId: students,
+      weekId: currentWeek || "week-id-1",
+      subjectId: currentSubject || "subject-id-1",
+      points: getPoints,
+    },
+  ];
+
+  const newCurrentPoints = currentPoints.filter((points) => {
+    if (points.weekId === currentWeek && points.subjectId === currentSubject) {
+      return points;
+    }
+  });
   console.log(students);
   console.log(getPoints);
+  console.log(currentPoints);
+  console.log(newCurrentPoints);
 
   return (
     <AppContext.Provider
@@ -86,6 +103,8 @@ export function AppProvider({ children }) {
 
         selectedWeek,
         setSelectedWeek,
+
+        newCurrentPoints,
       }}
     >
       {children}
