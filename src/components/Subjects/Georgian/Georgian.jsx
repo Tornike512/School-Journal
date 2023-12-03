@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useRef } from "react";
 import { AppContext } from "../../../AppContext";
 import "./georgian.scss";
 
@@ -7,9 +7,15 @@ export function Georgian() {
     useContext(AppContext);
 
   const firstSubject = subjects[0];
+  const buttonClicked = useRef();
+
+  useEffect(() => {
+    buttonClicked.current.click();
+  }, []);
 
   return (
     <button
+      ref={buttonClicked}
       onClick={() => {
         setCurrentSubject(firstSubject.id);
         setSelectedSubject("georgian");

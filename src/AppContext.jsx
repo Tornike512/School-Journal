@@ -53,26 +53,11 @@ export function AppProvider({ children }) {
 
   const [currentWeek, setCurrentWeek] = useState();
   const [currentSubject, setCurrentSubject] = useState();
+  const [currentPoints, setCurrentPoints] = useState([]);
 
-  const currentPoints = [
-    {
-      id: "points-Id-1",
-      StudentsId: students,
-      weekId: currentWeek || "week-id-1",
-      subjectId: currentSubject || "subject-id-1",
-      points: getPoints,
-    },
-  ];
-
-  const newCurrentPoints = currentPoints.filter((points) => {
-    if (points.weekId === currentWeek && points.subjectId === currentSubject) {
-      return points;
-    }
-  });
   console.log(students);
   console.log(getPoints);
   console.log(currentPoints);
-  console.log(newCurrentPoints);
 
   return (
     <AppContext.Provider
@@ -103,8 +88,6 @@ export function AppProvider({ children }) {
 
         selectedWeek,
         setSelectedWeek,
-
-        newCurrentPoints,
       }}
     >
       {children}
