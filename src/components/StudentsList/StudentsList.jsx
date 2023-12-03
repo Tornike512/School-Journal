@@ -16,7 +16,7 @@ export function StudentsList() {
 
   function buttonValue() {
     setEdit(false);
-    setGetPoints((prevPoints) => [...prevPoints, ...inputValues]);
+    setGetPoints((prev) => [...prev, ...inputValues]);
   }
 
   function studentPoint(studentId, value) {

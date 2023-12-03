@@ -64,9 +64,6 @@ export function AppProvider({ children }) {
   const [currentWeek, setCurrentWeek] = useState();
   const [currentSubject, setCurrentSubject] = useState();
 
-  const [activeSubjectsPage, setActiveSubjectsPage] = useState(1);
-  const [activeWeeksPage, setActiveWeeksPage] = useState(1);
-
   console.log(students);
   console.log(getPoints);
 
@@ -90,12 +87,6 @@ export function AppProvider({ children }) {
 
         currentSubject,
         setCurrentSubject,
-
-        activeSubjectsPage,
-        setActiveSubjectsPage,
-
-        activeWeeksPage,
-        setActiveWeeksPage,
 
         getPoints,
         setGetPoints,
