@@ -17,7 +17,6 @@ export function AddStudentModal() {
       firstName: firstName,
       lastName: lastName,
     };
-
     setStudents((prev) => [...prev, newStudent]);
     setFirstName("");
     setLastName("");

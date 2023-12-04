@@ -32,7 +32,7 @@ function App() {
         </div>
       </section>
       <section>
-        <div className="list-spacing">
+        <div className="input-student">
           <StudentsList />
         </div>
       </section>
