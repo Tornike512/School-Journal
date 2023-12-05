@@ -3,8 +3,14 @@ import { AppContext } from "../../AppContext";
 import "./StudentsList.scss";
 
 export function StudentsList() {
-  const { students, setGetPoints, getPoints, currentWeek, currentSubject } =
-    useContext(AppContext);
+  const {
+    students,
+    setGetPoints,
+    getPoints,
+    currentWeek,
+    currentSubject,
+    weekDays,
+  } = useContext(AppContext);
 
   const [edit, setEdit] = useState(false);
   const [inputValues, setInputValues] = useState(
@@ -66,8 +72,12 @@ export function StudentsList() {
     },
   ];
 
+  const currentWeekSubject = currentGrades.filter((currentGrade) => {
+    currentWeek === "week-id-1" && currentSubject === "subject-id-1";
+  });
   // console.log(geoFirst, "georfirst");
   // console.log(currentGrades);
+
   console.log(inputValues, "input values");
   return (
     <>
@@ -77,14 +87,127 @@ export function StudentsList() {
           <h1 className="last-name">გვარი</h1>
         </div>
         <div className="week-spacing">
-          <h1 className="monday">ორშაბათი</h1>
-          <h1 className="tuesday">სამშაბათი</h1>
-          <h1 className="wednesday">ოთხშაბათი</h1>
-          <h1 className="thursday">ხუთშაბათი</h1>
-          <h1 className="friday">პარასკევი</h1>
+          {weekDays.map((weekDay) => {
+            return (
+              <h1 className="week-days" key={weekDay.id}>
+                {weekDay.name}
+              </h1>
+            );
+          })}
         </div>
       </div>
-      {currentSubject === "subject-id-1" &&
+      {students?.map((student) => {
+        return (
+          <div className="new-student-spacing">
+            <div key={student.id} className="student-spacing">
+              <h1 className="new-student">{student.firstName}</h1>
+              <h1 className="new-student">{student.lastName}</h1>
+              <div className="point-spacing">
+                <div>
+                  {currentWeek === "week-id-1" &&
+                    currentSubject === "subject-id-1" &&
+                    weekDays.map((weekDay) => {
+                      return (
+                        <div>
+                          <input type="text" placeholder="-" />
+                        </div>
+                      );
+                    })}
+                </div>
+                <div>
+                  {currentWeek === "week-id-2" &&
+                    currentSubject === "subject-id-1" &&
+                    weekDays.map((weekDay) => {
+                      return (
+                        <div>
+                          <input type="text" placeholder="-" />
+                        </div>
+                      );
+                    })}
+                </div>
+                <div>
+                  {currentWeek === "week-id-3" &&
+                    currentSubject === "subject-id-1" &&
+                    weekDays.map((weekDay) => {
+                      return (
+                        <div>
+                          <input type="text" placeholder="-" />
+                        </div>
+                      );
+                    })}
+                </div>
+                <div>
+                  {currentWeek === "week-id-1" &&
+                    currentSubject === "subject-id-2" &&
+                    weekDays.map((weekDay) => {
+                      return (
+                        <div>
+                          <input type="text" placeholder="-" />
+                        </div>
+                      );
+                    })}
+                </div>
+                <div>
+                  {currentWeek === "week-id-2" &&
+                    currentSubject === "subject-id-2" &&
+                    weekDays.map((weekDay) => {
+                      return (
+                        <div>
+                          <input type="text" placeholder="-" />
+                        </div>
+                      );
+                    })}
+                </div>
+                <div>
+                  {currentWeek === "week-id-3" &&
+                    currentSubject === "subject-id-2" &&
+                    weekDays.map((weekDay) => {
+                      return (
+                        <div>
+                          <input type="text" placeholder="-" />
+                        </div>
+                      );
+                    })}
+                </div>
+                <div>
+                  {currentWeek === "week-id-1" &&
+                    currentSubject === "subject-id-3" &&
+                    weekDays.map((weekDay) => {
+                      return (
+                        <div>
+                          <input type="text" placeholder="-" />
+                        </div>
+                      );
+                    })}
+                </div>
+                <div>
+                  {currentWeek === "week-id-2" &&
+                    currentSubject === "subject-id-3" &&
+                    weekDays.map((weekDay) => {
+                      return (
+                        <div>
+                          <input type="text" placeholder="-" />
+                        </div>
+                      );
+                    })}
+                </div>
+                <div>
+                  {currentWeek === "week-id-3" &&
+                    currentSubject === "subject-id-3" &&
+                    weekDays.map((weekDay) => {
+                      return (
+                        <div>
+                          <input type="text" placeholder="-" />
+                        </div>
+                      );
+                    })}
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+      {/* {currentSubject === "subject-id-1" &&
         currentWeek === "week-id-1" &&
         students?.map((student, studentId) => (
           <div className="new-student-spacing" key={student.id}>
@@ -158,7 +281,7 @@ export function StudentsList() {
               </div>
             </div>
           </div>
-        ))}
+        ))} */}
     </>
   );
 }

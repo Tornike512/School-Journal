@@ -12,6 +12,14 @@ const weeks_default = [
   { id: "week-id-3", name: "მესამე კვირა" },
 ];
 
+const weekDays_default = [
+  { id: "first-day", name: "ორშაბათი" },
+  { id: "second-day", name: "სამშაბათი" },
+  { id: "third-day", name: "ოთხშაბათი" },
+  { id: "fourth-day", name: "ხუთშაბათი" },
+  { id: "fifth-day", name: "პარასკევი" },
+];
+
 // const points_default = [
 //   {
 //     id: "grade-id-1",
@@ -45,6 +53,7 @@ export const AppContext = createContext({
 export function AppProvider({ children }) {
   const [subjects, setSubjects] = useState(subjects_default);
   const [weeks, setWeeks] = useState(weeks_default);
+  const [weekDays, setWeekDays] = useState(weekDays_default);
   const [points, setPoints] = useState([]);
   const [students, setStudents] = useState([]);
   const [getPoints, setGetPoints] = useState([]);
@@ -99,6 +108,9 @@ export function AppProvider({ children }) {
 
         currentPoints,
         setCurrentPoints,
+
+        weekDays,
+        setWeekDays,
       }}
     >
       {children}

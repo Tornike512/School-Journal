@@ -30,39 +30,7 @@
     margin-top: 20px;
     margin-left: 150px;
 
-    .monday {
-      display: flex;
-      justify-content: center;
-      width: 150px;
-      height: 30px;
-      border: 1px solid black;
-      font-size: 20px;
-    }
-    .tuesday {
-      display: flex;
-      justify-content: center;
-      width: 150px;
-      height: 30px;
-      border: 1px solid black;
-      font-size: 20px;
-    }
-    .wednesday {
-      display: flex;
-      justify-content: center;
-      width: 150px;
-      height: 30px;
-      border: 1px solid black;
-      font-size: 20px;
-    }
-    .thursday {
-      display: flex;
-      justify-content: center;
-      width: 150px;
-      height: 30px;
-      border: 1px solid black;
-      font-size: 20px;
-    }
-    .friday {
+    .week-days {
       display: flex;
       justify-content: center;
       width: 150px;
