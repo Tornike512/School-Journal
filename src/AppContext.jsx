@@ -72,6 +72,12 @@ export function AppProvider({ children }) {
     },
   ]);
 
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const setPage = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   console.log(students);
   console.log(getPoints);
   console.log(currentPoints);
@@ -111,6 +117,8 @@ export function AppProvider({ children }) {
 
         weekDays,
         setWeekDays,
+
+        setPage,
       }}
     >
       {children}

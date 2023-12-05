@@ -28,6 +28,8 @@ export function StudentsList() {
   const [inputValues4, setInputValues4] = useState(
     Array(students.length * 5).fill("")
   );
+
+  const [keepInput, setKeepInput] = useState([]);
   // tu week-id-1 da subject-id-1 mashin inaxeba geofirstsi
   // const [geoFirst, setGeoFirst] = useState([]);
   // const [geoSecond, setGeoSecond] = useState([]);
@@ -77,8 +79,18 @@ export function StudentsList() {
   });
   // console.log(geoFirst, "georfirst");
   // console.log(currentGrades);
-
   console.log(inputValues, "input values");
+
+  const [inputValue, setInputValue] = useState({
+    "first-day": "",
+    "second-day": "",
+    "third-day": "",
+    "fourth-day": "",
+    "fifth-day": "",
+  });
+
+  console.log("keepinputs", keepInput);
+  console.log(inputValue, "ianfpjiansfljansflij");
   return (
     <>
       <div className="week-info-spacing">
@@ -104,15 +116,21 @@ export function StudentsList() {
               <h1 className="new-student">{student.lastName}</h1>
               <div className="point-spacing">
                 <div>
-                  {currentWeek === "week-id-1" &&
-                    currentSubject === "subject-id-1" &&
-                    weekDays.map((weekDay) => {
-                      return (
-                        <div>
-                          <input type="text" placeholder="-" />
-                        </div>
-                      );
-                    })}
+                  {weekDays.map((weekDay) => (
+                    <div key={weekDay.id}>
+                      <input
+                        value={inputValue[weekDay.id]} // Use the corresponding value from inputValue
+                        onChange={(e) =>
+                          setInputValue((prevInput) => ({
+                            ...prevInput,
+                            [weekDay.id]: e.target.value,
+                          }))
+                        }
+                        type="text"
+                        placeholder="-"
+                      />
+                    </div>
+                  ))}
                 </div>
                 <div>
                   {currentWeek === "week-id-2" &&
