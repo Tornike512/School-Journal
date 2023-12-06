@@ -75,22 +75,13 @@ export function StudentsList() {
   ];
 
   const currentWeekSubject = currentGrades.filter((currentGrade) => {
-    currentWeek === "week-id-1" && currentSubject === "subject-id-1";
+    return currentWeek === "week-id-1" && currentSubject === "subject-id-1";
   });
   // console.log(geoFirst, "georfirst");
   // console.log(currentGrades);
   console.log(inputValues, "input values");
 
-  const [inputValue, setInputValue] = useState({
-    "first-day": "",
-    "second-day": "",
-    "third-day": "",
-    "fourth-day": "",
-    "fifth-day": "",
-  });
-
   console.log("keepinputs", keepInput);
-  console.log(inputValue, "ianfpjiansfljansflij");
   return (
     <>
       <div className="week-info-spacing">
@@ -116,21 +107,15 @@ export function StudentsList() {
               <h1 className="new-student">{student.lastName}</h1>
               <div className="point-spacing">
                 <div>
-                  {weekDays.map((weekDay) => (
-                    <div key={weekDay.id}>
-                      <input
-                        value={inputValue[weekDay.id]} // Use the corresponding value from inputValue
-                        onChange={(e) =>
-                          setInputValue((prevInput) => ({
-                            ...prevInput,
-                            [weekDay.id]: e.target.value,
-                          }))
-                        }
-                        type="text"
-                        placeholder="-"
-                      />
-                    </div>
-                  ))}
+                  {currentWeek === "week-id-1" &&
+                    currentSubject === "subject-id-1" &&
+                    weekDays.map((weekDay) => {
+                      return (
+                        <div>
+                          <input key={weekDay.id} type="text" placeholder="-" />
+                        </div>
+                      );
+                    })}
                 </div>
                 <div>
                   {currentWeek === "week-id-2" &&
