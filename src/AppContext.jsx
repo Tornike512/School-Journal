@@ -48,6 +48,9 @@ export const AppContext = createContext({
 
   selectedWeek: "",
   setSelectedWeek: undefined,
+
+  addedGrades: "",
+  setAddedGrades: undefined,
 });
 
 export function AppProvider({ children }) {
@@ -60,8 +63,9 @@ export function AppProvider({ children }) {
   const [selectedSubject, setSelectedSubject] = useState("");
   const [selectedWeek, setSelectedWeek] = useState("");
 
-  const [currentWeek, setCurrentWeek] = useState();
-  const [currentSubject, setCurrentSubject] = useState();
+  const [addedGrades, setAddedGrades] = useState(false);
+  const [currentWeek, setCurrentWeek] = useState([]);
+  const [currentSubject, setCurrentSubject] = useState([]);
   const [currentPoints, setCurrentPoints] = useState([
     {
       id: "points-Id-1",
@@ -72,16 +76,10 @@ export function AppProvider({ children }) {
     },
   ]);
 
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const setPage = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
-
   console.log(students);
   console.log(getPoints);
   console.log(currentPoints);
-
+  console.log(currentWeek, "currentweasd");
   return (
     <AppContext.Provider
       value={{
@@ -118,7 +116,8 @@ export function AppProvider({ children }) {
         weekDays,
         setWeekDays,
 
-        setPage,
+        addedGrades,
+        setAddedGrades,
       }}
     >
       {children}

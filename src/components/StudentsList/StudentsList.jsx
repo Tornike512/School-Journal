@@ -30,6 +30,7 @@ export function StudentsList() {
   );
 
   const [keepInput, setKeepInput] = useState([]);
+  const [keepWeeks, setKeepWeeks] = useState([]);
   // tu week-id-1 da subject-id-1 mashin inaxeba geofirstsi
   // const [geoFirst, setGeoFirst] = useState([]);
   // const [geoSecond, setGeoSecond] = useState([]);
@@ -58,12 +59,6 @@ export function StudentsList() {
     setInputValues(newInputValues);
   }
 
-  function studentPoint1(studentId1, value1) {
-    const newInputValues = [...inputValues1];
-    newInputValues[studentId1] = value1;
-    setInputValues(newInputValues);
-  }
-
   const currentGrades = [
     {
       id: "grade-Id-1",
@@ -80,8 +75,15 @@ export function StudentsList() {
   // console.log(geoFirst, "georfirst");
   // console.log(currentGrades);
   console.log(inputValues, "input values");
+  useEffect(
+    () => {
+      setKeepWeeks((prev) => [...prev, currentWeek, currentSubject]);
+    },
+    [currentWeek],
+    [currentSubject]
+  );
 
-  console.log("keepinputs", keepInput);
+  console.log("keepinputs", keepWeeks);
   return (
     <>
       <div className="week-info-spacing">
@@ -107,103 +109,18 @@ export function StudentsList() {
               <h1 className="new-student">{student.lastName}</h1>
               <div className="point-spacing">
                 <div>
-                  {currentWeek === "week-id-1" &&
-                    currentSubject === "subject-id-1" &&
-                    weekDays.map((weekDay) => {
-                      return (
-                        <div>
-                          <input key={weekDay.id} type="text" placeholder="-" />
-                        </div>
-                      );
-                    })}
-                </div>
-                <div>
-                  {currentWeek === "week-id-2" &&
-                    currentSubject === "subject-id-1" &&
-                    weekDays.map((weekDay) => {
-                      return (
-                        <div>
-                          <input type="text" placeholder="-" />
-                        </div>
-                      );
-                    })}
-                </div>
-                <div>
-                  {currentWeek === "week-id-3" &&
-                    currentSubject === "subject-id-1" &&
-                    weekDays.map((weekDay) => {
-                      return (
-                        <div>
-                          <input type="text" placeholder="-" />
-                        </div>
-                      );
-                    })}
-                </div>
-                <div>
-                  {currentWeek === "week-id-1" &&
-                    currentSubject === "subject-id-2" &&
-                    weekDays.map((weekDay) => {
-                      return (
-                        <div>
-                          <input type="text" placeholder="-" />
-                        </div>
-                      );
-                    })}
-                </div>
-                <div>
-                  {currentWeek === "week-id-2" &&
-                    currentSubject === "subject-id-2" &&
-                    weekDays.map((weekDay) => {
-                      return (
-                        <div>
-                          <input type="text" placeholder="-" />
-                        </div>
-                      );
-                    })}
-                </div>
-                <div>
-                  {currentWeek === "week-id-3" &&
-                    currentSubject === "subject-id-2" &&
-                    weekDays.map((weekDay) => {
-                      return (
-                        <div>
-                          <input type="text" placeholder="-" />
-                        </div>
-                      );
-                    })}
-                </div>
-                <div>
-                  {currentWeek === "week-id-1" &&
-                    currentSubject === "subject-id-3" &&
-                    weekDays.map((weekDay) => {
-                      return (
-                        <div>
-                          <input type="text" placeholder="-" />
-                        </div>
-                      );
-                    })}
-                </div>
-                <div>
-                  {currentWeek === "week-id-2" &&
-                    currentSubject === "subject-id-3" &&
-                    weekDays.map((weekDay) => {
-                      return (
-                        <div>
-                          <input type="text" placeholder="-" />
-                        </div>
-                      );
-                    })}
-                </div>
-                <div>
-                  {currentWeek === "week-id-3" &&
-                    currentSubject === "subject-id-3" &&
-                    weekDays.map((weekDay) => {
-                      return (
-                        <div>
-                          <input type="text" placeholder="-" />
-                        </div>
-                      );
-                    })}
+                  {weekDays.map((weekDay) => {
+                    return (
+                      <div>
+                        <input
+                          className="display-input1"
+                          key={weekDay.id}
+                          type="text"
+                          placeholder="-"
+                        />
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </div>

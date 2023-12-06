@@ -3,15 +3,17 @@ import { AppContext } from "../../../AppContext";
 import "./FirstWeek.scss";
 
 export function FirstWeek() {
-  const { weeks, setCurrentWeek, selectedWeek, setSelectedWeek } =
+  const { weeks, setCurrentWeek, selectedWeek, setSelectedWeek, addedGrades } =
     useContext(AppContext);
 
   const firstWeek = weeks[0];
-  const weekButtonClicked = useRef();
+  const weekButtonClicked = useRef(null);
 
   useEffect(() => {
-    weekButtonClicked.current.click();
-  }, []);
+    if (addedGrades === true) {
+      weekButtonClicked.current.click();
+    }
+  }, [addedGrades]);
 
   return (
     <button

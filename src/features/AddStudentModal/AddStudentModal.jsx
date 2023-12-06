@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { AppContext } from "../../AppContext";
 
 import "./AddStudentModal.scss";
@@ -9,7 +9,12 @@ export function AddStudentModal() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
-  const { setStudents } = useContext(AppContext);
+  const { setStudents, currentWeek, currentSubject, setAddedGrades } =
+    useContext(AppContext);
+
+  useEffect(() => {
+    addStudent();
+  }, [currentWeek, currentSubject]);
 
   function addStudent() {
     const newStudent = {
@@ -17,6 +22,7 @@ export function AddStudentModal() {
       firstName: firstName,
       lastName: lastName,
     };
+
     setStudents((prev) => [...prev, newStudent]);
     setFirstName("");
     setLastName("");
@@ -63,6 +69,7 @@ export function AddStudentModal() {
               {
                 setVisible(false);
                 addStudent();
+                setAddedGrades(true);
               }
             }}
             className="add-button"
