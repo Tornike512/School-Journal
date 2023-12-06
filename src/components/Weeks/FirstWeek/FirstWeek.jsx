@@ -7,13 +7,11 @@ export function FirstWeek() {
     useContext(AppContext);
 
   const firstWeek = weeks[0];
-  const weekButtonClicked = useRef(null);
+  const weekButtonClicked = useRef();
 
   useEffect(() => {
-    if (addedGrades === true) {
-      weekButtonClicked.current.click();
-    }
-  }, [addedGrades]);
+    weekButtonClicked.current.click();
+  }, []);
 
   return (
     <button

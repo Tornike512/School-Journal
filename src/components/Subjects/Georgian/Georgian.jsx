@@ -15,10 +15,8 @@ export function Georgian() {
   const buttonClicked = useRef();
 
   useEffect(() => {
-    if (addedGrades === true) {
-      buttonClicked.current.click();
-    }
-  }, [addedGrades]);
+    buttonClicked.current.click();
+  }, []);
 
   return (
     <button

@@ -113,7 +113,164 @@ export function StudentsList() {
                     return (
                       <div>
                         <input
-                          className="display-input1"
+                          className={
+                            currentWeek === "week-id-1" &&
+                            currentSubject === "subject-id-1"
+                              ? "display-input1"
+                              : "display-input"
+                          }
+                          key={weekDay.id}
+                          type="text"
+                          placeholder="-"
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+                <div>
+                  {weekDays.map((weekDay) => {
+                    return (
+                      <div>
+                        <input
+                          className={
+                            currentWeek === "week-id-2" &&
+                            currentSubject === "subject-id-1"
+                              ? "display-input1"
+                              : "display-input"
+                          }
+                          key={weekDay.id}
+                          type="text"
+                          placeholder="-"
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+                <div>
+                  {weekDays.map((weekDay) => {
+                    return (
+                      <div>
+                        <input
+                          className={
+                            currentWeek === "week-id-3" &&
+                            currentSubject === "subject-id-1"
+                              ? "display-input1"
+                              : "display-input"
+                          }
+                          key={weekDay.id}
+                          type="text"
+                          placeholder="-"
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+                <div>
+                  {weekDays.map((weekDay) => {
+                    return (
+                      <div>
+                        <input
+                          className={
+                            currentWeek === "week-id-1" &&
+                            currentSubject === "subject-id-2"
+                              ? "display-input1"
+                              : "display-input"
+                          }
+                          key={weekDay.id}
+                          type="text"
+                          placeholder="-"
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+                <div>
+                  {weekDays.map((weekDay) => {
+                    return (
+                      <div>
+                        <input
+                          className={
+                            currentWeek === "week-id-2" &&
+                            currentSubject === "subject-id-2"
+                              ? "display-input1"
+                              : "display-input"
+                          }
+                          key={weekDay.id}
+                          type="text"
+                          placeholder="-"
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+                <div>
+                  {weekDays.map((weekDay) => {
+                    return (
+                      <div>
+                        <input
+                          className={
+                            currentWeek === "week-id-3" &&
+                            currentSubject === "subject-id-2"
+                              ? "display-input1"
+                              : "display-input"
+                          }
+                          key={weekDay.id}
+                          type="text"
+                          placeholder="-"
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+                <div>
+                  {weekDays.map((weekDay) => {
+                    return (
+                      <div>
+                        <input
+                          className={
+                            currentWeek === "week-id-1" &&
+                            currentSubject === "subject-id-3"
+                              ? "display-input1"
+                              : "display-input"
+                          }
+                          key={weekDay.id}
+                          type="text"
+                          placeholder="-"
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+                <div>
+                  {weekDays.map((weekDay) => {
+                    return (
+                      <div>
+                        <input
+                          className={
+                            currentWeek === "week-id-2" &&
+                            currentSubject === "subject-id-3"
+                              ? "display-input1"
+                              : "display-input"
+                          }
+                          key={weekDay.id}
+                          type="text"
+                          placeholder="-"
+                        />
+                      </div>
+                    );
+                  })}
+                </div>
+                <div>
+                  {weekDays.map((weekDay) => {
+                    return (
+                      <div>
+                        <input
+                          className={
+                            currentWeek === "week-id-3" &&
+                            currentSubject === "subject-id-3"
+                              ? "display-input1"
+                              : "display-input"
+                          }
                           key={weekDay.id}
                           type="text"
                           placeholder="-"

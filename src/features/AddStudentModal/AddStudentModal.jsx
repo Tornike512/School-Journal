@@ -12,10 +12,6 @@ export function AddStudentModal() {
   const { setStudents, currentWeek, currentSubject, setAddedGrades } =
     useContext(AppContext);
 
-  useEffect(() => {
-    addStudent();
-  }, [currentWeek, currentSubject]);
-
   function addStudent() {
     const newStudent = {
       id: uuidv4(),
