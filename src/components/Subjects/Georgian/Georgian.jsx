@@ -3,13 +3,8 @@ import { AppContext } from "../../../AppContext";
 import "./georgian.scss";
 
 export function Georgian() {
-  const {
-    subjects,
-    setCurrentSubject,
-    selectedSubject,
-    setSelectedSubject,
-    addedGrades,
-  } = useContext(AppContext);
+  const { subjects, setCurrentSubject, selectedSubject, setSelectedSubject } =
+    useContext(AppContext);
 
   const firstSubject = subjects[0];
   const buttonClicked = useRef();

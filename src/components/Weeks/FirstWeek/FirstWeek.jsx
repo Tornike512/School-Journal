@@ -3,7 +3,7 @@ import { AppContext } from "../../../AppContext";
 import "./FirstWeek.scss";
 
 export function FirstWeek() {
-  const { weeks, setCurrentWeek, selectedWeek, setSelectedWeek, addedGrades } =
+  const { weeks, setCurrentWeek, selectedWeek, setSelectedWeek } =
     useContext(AppContext);
 
   const firstWeek = weeks[0];
