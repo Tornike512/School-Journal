@@ -53,6 +53,7 @@ export function AddStudentModal() {
                 setFirstName(e.target.value);
               }}
             />
+            <h3 className="student-name">შემოიყვანეთ მოსწავლის სახელი</h3>
             <input
               placeholder="მოსწავლის გვარი"
               value={lastName}
