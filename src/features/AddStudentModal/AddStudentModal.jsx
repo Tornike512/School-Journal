@@ -9,7 +9,7 @@ export function AddStudentModal() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
-  const { setStudents, setAddedGrades } = useContext(AppContext);
+  const { setStudents } = useContext(AppContext);
 
   function addStudent() {
     const newStudent = {
@@ -64,7 +64,6 @@ export function AddStudentModal() {
               {
                 setVisible(false);
                 addStudent();
-                setAddedGrades(true);
               }
             }}
             className="add-button"

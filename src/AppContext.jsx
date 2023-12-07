@@ -30,46 +30,28 @@ export const AppContext = createContext({
   students: [],
   setStudents: undefined,
 
-  points: [],
-  setPoints: undefined,
-
   selectedSubject: "",
   setSelectedSubject: undefined,
 
   selectedWeek: "",
   setSelectedWeek: undefined,
-
-  addedGrades: "",
-  setAddedGrades: undefined,
 });
 
 export function AppProvider({ children }) {
   const [subjects, setSubjects] = useState(subjects_default);
   const [weeks, setWeeks] = useState(weeks_default);
   const [weekDays, setWeekDays] = useState(weekDays_default);
-  const [points, setPoints] = useState([]);
+
   const [students, setStudents] = useState([]);
-  const [getPoints, setGetPoints] = useState([]);
   const [selectedSubject, setSelectedSubject] = useState("");
   const [selectedWeek, setSelectedWeek] = useState("");
 
-  const [addedGrades, setAddedGrades] = useState(false);
   const [currentWeek, setCurrentWeek] = useState([]);
   const [currentSubject, setCurrentSubject] = useState([]);
-  const [currentPoints, setCurrentPoints] = useState([
-    {
-      id: "points-Id-1",
-      StudentsId: students[0],
-      weekId: currentWeek || "week-id-1",
-      subjectId: currentSubject || "subject-id-1",
-      points: getPoints,
-    },
-  ]);
 
   console.log(students);
-  console.log(getPoints);
-  console.log(currentPoints);
-  console.log(currentWeek, "currentweasd");
+  console.log(currentWeek, "currentWeek");
+  console.log(currentSubject, "currentSubject");
   return (
     <AppContext.Provider
       value={{
@@ -82,17 +64,11 @@ export function AppProvider({ children }) {
         students,
         setStudents,
 
-        points,
-        setPoints,
-
         currentWeek,
         setCurrentWeek,
 
         currentSubject,
         setCurrentSubject,
-
-        getPoints,
-        setGetPoints,
 
         selectedSubject,
         setSelectedSubject,
@@ -100,14 +76,8 @@ export function AppProvider({ children }) {
         selectedWeek,
         setSelectedWeek,
 
-        currentPoints,
-        setCurrentPoints,
-
         weekDays,
         setWeekDays,
-
-        addedGrades,
-        setAddedGrades,
       }}
     >
       {children}
