@@ -20,16 +20,6 @@ const weekDays_default = [
   { id: "fifth-day", name: "პარასკევი" },
 ];
 
-// const points_default = [
-//   {
-//     id: "grade-id-1",
-//     studentsId: "students-id-1",
-//     subjectId: "subject-id-1,",
-//     weekId: "week-id-1",
-//     points: 10,
-//   },
-// ];
-
 export const AppContext = createContext({
   subjects: [],
   setSubjects: undefined,

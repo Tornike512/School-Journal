@@ -9,8 +9,7 @@ export function AddStudentModal() {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
 
-  const { setStudents, currentWeek, currentSubject, setAddedGrades } =
-    useContext(AppContext);
+  const { setStudents, setAddedGrades } = useContext(AppContext);
 
   function addStudent() {
     const newStudent = {
