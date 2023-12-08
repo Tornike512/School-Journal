@@ -8,8 +8,8 @@ export function AddStudentModal() {
   const [visible, setVisible] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [emptyFirstName, setEmptyFirstName] = useState(true);
-  const [emptyLastName, setEmptyLastName] = useState(true);
+  const [emptyFirstName, setEmptyFirstName] = useState(false);
+  const [emptyLastName, setEmptyLastName] = useState(false);
 
   const { setStudents } = useContext(AppContext);
 
@@ -45,13 +45,24 @@ export function AddStudentModal() {
 
       <div className="modal-background">
         <div className="modal">
-          <button onClick={() => setVisible(false)} className="x-button">
+          <button
+            onClick={() => {
+              setVisible(false);
+              setEmptyFirstName(false);
+              setEmptyLastName(false);
+              setFirstName("");
+              setLastName("");
+            }}
+            className="x-button"
+          >
             X
           </button>
           <h1>ახალი მოსწავლის დამატება</h1>
           <form onSubmit={(e) => e.preventDefault()}>
             <input
-              className="firstname-input"
+              className={
+                !emptyFirstName ? "firstname-input" : "firstname-empty"
+              }
               placeholder="მოსწავლის სახელი"
               value={firstName}
               onChange={(e) => {
@@ -61,9 +72,11 @@ export function AddStudentModal() {
                 }
               }}
             />
-            <h3 className="student-name">შემოიყვანეთ მოსწავლის სახელი</h3>
+            <h3 className={emptyFirstName ? "student-name" : "name-hidden"}>
+              შემოიყვანეთ მოსწავლის სახელი
+            </h3>
             <input
-              className="lastname-input"
+              className={emptyLastName ? "lastname-empty" : "lastname-input"}
               placeholder="მოსწავლის გვარი"
               value={lastName}
               onChange={(e) => {
@@ -71,14 +84,27 @@ export function AddStudentModal() {
                 setEmptyLastName(false);
               }}
             />
-            <h3 className="student-lastname">შემოიყვანეთ მოსწავლის გვარი</h3>
+            <h3
+              className={emptyLastName ? "student-lastname" : "lastname-hidden"}
+            >
+              შემოიყვანეთ მოსწავლის გვარი
+            </h3>
           </form>
           <button
             onClick={() => {
               {
-                if (emptyFirstName === true || emptyLastName === true) {
-                  setVisible(true);
+                if (firstName === "" && lastName === "") {
+                  setEmptyFirstName(true);
+                  setEmptyLastName(true);
+                } else if (firstName === "") {
+                  setEmptyLastName(false);
+                  setEmptyFirstName(true);
+                } else if (lastName === "") {
+                  setEmptyLastName(true);
+                  setEmptyFirstName(false);
                 } else {
+                  setEmptyFirstName(false);
+                  setEmptyLastName(false);
                   setVisible(false);
                   addStudent();
                 }

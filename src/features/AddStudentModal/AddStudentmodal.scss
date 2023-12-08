@@ -21,6 +21,14 @@
     border: 1px solid black;
 
     .student-name {
+      display: flex;
+      justify-content: center;
+      font-size: 12px;
+      margin-bottom: 3px;
+      color: rgb(255, 0, 0);
+    }
+
+    .name-hidden {
       display: none;
       justify-content: center;
       font-size: 12px;
@@ -29,6 +37,14 @@
     }
 
     .student-lastname {
+      display: flex;
+      justify-content: center;
+      font-size: 12px;
+      margin-bottom: 3px;
+      color: rgb(255, 0, 0);
+    }
+
+    .lastname-hidden {
       display: none;
       justify-content: center;
       font-size: 12px;
