@@ -21,7 +21,19 @@
     border: 1px solid black;
 
     .student-name {
-      font-size: 15px;
+      display: none;
+      justify-content: center;
+      font-size: 12px;
+      margin-bottom: 3px;
+      color: rgb(255, 0, 0);
+    }
+
+    .student-lastname {
+      display: none;
+      justify-content: center;
+      font-size: 12px;
+      margin-bottom: 3px;
+      color: rgb(255, 0, 0);
     }
 
     .x-button {
@@ -48,9 +60,30 @@
       font-size: 16px;
     }
 
-    input {
+    .firstname-input {
       display: flex;
       margin-bottom: 10px;
+      padding: 10px 20px;
+      border: 1px solid black;
+    }
+
+    .firstname-empty {
+      display: flex;
+      margin-bottom: 3px;
+      padding: 10px 20px;
+      border: 1px solid black;
+    }
+
+    .lastname-input {
+      display: flex;
+      margin-bottom: 10px;
+      padding: 10px 20px;
+      border: 1px solid black;
+    }
+
+    .lastname-empty {
+      display: flex;
+      margin-bottom: 3px;
       padding: 10px 20px;
       border: 1px solid black;
     }

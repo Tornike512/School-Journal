@@ -45,8 +45,9 @@ export function AddStudentModal() {
             X
           </button>
           <h1>ახალი მოსწავლის დამატება</h1>
-          <form onSubmit={(e) => e.preventDefault()} className="modal__input">
+          <form onSubmit={(e) => e.preventDefault()}>
             <input
+              className="firstname-input"
               placeholder="მოსწავლის სახელი"
               value={firstName}
               onChange={(e) => {
@@ -55,10 +56,12 @@ export function AddStudentModal() {
             />
             <h3 className="student-name">შემოიყვანეთ მოსწავლის სახელი</h3>
             <input
+              className="lastname-input"
               placeholder="მოსწავლის გვარი"
               value={lastName}
               onChange={(e) => setLastName(e.target.value)}
             />
+            <h3 className="student-lastname">შემოიყვანეთ მოსწავლის გვარი</h3>
           </form>
           <button
             onClick={() => {
