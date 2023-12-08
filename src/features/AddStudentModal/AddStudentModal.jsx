@@ -8,6 +8,8 @@ export function AddStudentModal() {
   const [visible, setVisible] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
+  const [emptyFirstName, setEmptyFirstName] = useState(true);
+  const [emptyLastName, setEmptyLastName] = useState(true);
 
   const { setStudents } = useContext(AppContext);
 
@@ -18,7 +20,9 @@ export function AddStudentModal() {
       lastName: lastName,
     };
 
-    setStudents((prev) => [...prev, newStudent]);
+    if (emptyFirstName === false || emptyLastName === false) {
+      setStudents((prev) => [...prev, newStudent]);
+    }
     setFirstName("");
     setLastName("");
   }
@@ -51,7 +55,10 @@ export function AddStudentModal() {
               placeholder="მოსწავლის სახელი"
               value={firstName}
               onChange={(e) => {
-                setFirstName(e.target.value);
+                {
+                  setFirstName(e.target.value);
+                  setEmptyFirstName(false);
+                }
               }}
             />
             <h3 className="student-name">შემოიყვანეთ მოსწავლის სახელი</h3>
@@ -59,15 +66,22 @@ export function AddStudentModal() {
               className="lastname-input"
               placeholder="მოსწავლის გვარი"
               value={lastName}
-              onChange={(e) => setLastName(e.target.value)}
+              onChange={(e) => {
+                setLastName(e.target.value);
+                setEmptyLastName(false);
+              }}
             />
             <h3 className="student-lastname">შემოიყვანეთ მოსწავლის გვარი</h3>
           </form>
           <button
             onClick={() => {
               {
-                setVisible(false);
-                addStudent();
+                if (emptyFirstName === true || emptyLastName === true) {
+                  setVisible(true);
+                } else {
+                  setVisible(false);
+                  addStudent();
+                }
               }
             }}
             className="add-button"
